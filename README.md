@@ -37,3 +37,31 @@ LEMI *.B423 binary files consist of:
 | `PPS`             | Deviation from PPS (short) |
 | `PLL`             | PLL accuracy (short) |
 
+
+The raw data for the above channels (Bx, By, Bz, Ex, Ey) are in integer counts.
+
+However, additional scalings (coefficients from the header) from the *.B423 files are applied to give:
+  - millivolts (mV) for the magnetic channels
+  - microvolts (uV) for the electric channels
+
+The scalings are:
+  - Channel 1 = (Channel 1 * Kmx) + Ax
+  - Channel 2 = (Channel 1 * Kmy) + Ay
+  - Channel 3 = (Channel 1 * Kmz) + Az
+  - Channel 4 = (Channel 1 * Ke1) + Ae1
+  - Channel 5 = (Channel 1 * Ke2) + Ae2
+
+Additional scaling to pyhsical units, will also have to be applied. 
+  - Convert electrical data to mV/km
+       - By dividing Ex and Ey by the dipole distance (m)  
+  - Convert magnetic data to nT
+       - Magnetic coils need calibrating from the *.RSP file
+       - That have the following units:
+            - Freq (Hz)
+            - Magnitude (mV/nT)
+            - Phase (deg)
+       - Converted to the following units:
+            - Freq (Hz)
+            - Magnitude (mV/nT)
+            - Phase (radians)
+
