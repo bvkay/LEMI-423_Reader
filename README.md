@@ -19,3 +19,17 @@ Supports parallel processing.
 ### Run the Processor
 ```sh
 python Process_LEMI_423.py <path_to_metadata_csv> [num_cpus]
+```
+### *.B423 Binary File Format
+| Field            | Description |
+|-----------------|-------------|
+| `SECOND_TIMESTAMP` | UTC timestamp (long) |
+| `SAMPLE_NUM`      | Sample number (0 - FS) (short) |
+| `Bx`              | Channel 1 (long) |
+| `By`              | Channel 2 (long) |
+| `Bz`              | Channel 3 (long) |
+| `Ex`              | Channel 4 (long) |
+| `Ey`              | Channel 5 (long) |
+| `PPS`             | Deviation from PPS (short) |
+| `PLL`             | PLL accuracy (short) |
+
