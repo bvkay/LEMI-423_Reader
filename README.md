@@ -22,8 +22,8 @@ python Process_LEMI_423.py <path_to_metadata_csv> [num_cpus]
 ```
 ### *.B423 Binary File Format
 LEMI *.B423 binary files consist of:
-	1.	1024-byte ASCII header (contains Instrument number, firmware Ver, Date Time, Lat, Lon, Alt, scaling coefficients)
-	2.	Raw measurement data as:
+1.	1024-byte ASCII header (contains Instrument number, firmware Ver, Date Time, Lat, Lon, Alt, scaling coefficients)
+3.	Raw measurement data as:
 
 | Field            | Description |
 |-----------------|-------------|
